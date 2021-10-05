@@ -1,0 +1,58 @@
+<div class="menu">
+    <div class="container">
+        <div class="row">
+            <div class="col-6 title">
+                <h1>Gestão de Usuários</h1>
+            </div>
+            <div class="col-6 new-user">
+                <app-sign-up (onCreateSuccess)="getUsers()"></app-sign-up>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container user-table">
+    <div class="row m-4">
+        <h4 class="w-auto">filtro:</h4>
+        <input 
+            type="text" 
+            [(ngModel)]="nome" 
+            class="form-control" 
+            style="width: 30%;min-width: 130px;" 
+            placeholder="nome">
+        <select 
+            class="form-select" 
+            style="width: 30%;min-width: 100px;margin-left: 20px;margin-right: 20px;" 
+            [(ngModel)]="ativo" 
+            name="ativo" 
+            #fieldAtivo="ngModel">
+                <option [ngValue]="true">Ativo</option>
+                <option [ngValue]="false">Inativo</option>
+        </select>
+        <button type="button" class="btn btn-primary w-auto" (click)="filter()">Filtrar</button>
+    </div>
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Data de Nascimento</th>
+          <th>E-mail</th>
+          <th>Sexo</th>
+          <th>Ativo</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let user of users">
+          <td><span>{{ user.nome }}</span></td>
+          <td><span>{{ formatDate(user.dataNascimento) }}</span></td>
+          <td><span>{{ user.email}}</span></td>
+          <td><span>{{ formatSexo(user.sexoId) }}</span></td>
+          <td><span>{{ formatAtivo(user.ativo) }}</span></td>
+          <td class="action-column">
+              <app-edit [user]="user"></app-edit>
+              <app-delete [userId]="user.usuarioId" (onExcludeSuccess)="getUsers()"></app-delete>
+          </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

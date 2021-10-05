@@ -1,0 +1,14 @@
+<ng-template #modalContent let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Confirmar exclusão</h4>
+    </div>
+    <div class="modal-body">
+      <p>tem certeza que deseja excluir esse usuário?</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss(false)">Cancelar</button>
+      <button type="button" class="btn btn-danger" (click)="modal.close(true)">Continuar</button>
+    </div>
+  </ng-template>
+  
+  <button class="btn btn-sm btn-danger" (click)="open(modalContent)"><i class="fa fa-remove"></i>Excluir</button>

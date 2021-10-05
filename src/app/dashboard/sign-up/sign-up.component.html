@@ -1,0 +1,76 @@
+<ng-template #modalContent let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Cadastrar Usuário</h4>
+    </div>
+    <form class="form mt-4" #signinForm="ngForm">
+        <div class="modal-body">
+            <div class="form-group mb-3">
+                <input 
+                    class="form-control" 
+                    placeholder="Nome*" 
+                    required [(ngModel)]="User.nome" 
+                    name="nome" 
+                    #fieldName="ngModel">
+                <app-mensagem 
+                    *ngIf="fieldName.invalid && fieldName.touched"
+                    mensage="Nome vazio ou com menos de 3 caracteres."></app-mensagem>
+            </div>
+            <div class="form-group mb-3">
+                <input type="date" 
+                    class="form-control" 
+                    placeholder="Data de Nascimento*" 
+                    required [(ngModel)]="User.dataNascimento" 
+                    name="dataNascimento"
+                    #fieldNasc="ngModel">
+                <app-mensagem 
+                    *ngIf="fieldNasc.invalid && fieldNasc.touched"
+                    mensage="Data de nascimento obrigatória."></app-mensagem>
+            </div>
+            <div class="form-group mb-3">
+                <input 
+                    type="email" 
+                    class="form-control" 
+                    placeholder="E-mail*" 
+                    required 
+                    [(ngModel)]="User.email" 
+                    name="email"
+                    #fieldEmail="ngModel">
+                <app-mensagem 
+                    *ngIf="fieldEmail.invalid && fieldEmail.touched"
+                    mensage="E-mail obrigatório."></app-mensagem>
+            </div>
+            <div class="form-group mb-3">
+                <input type="password" 
+                    class="form-control" 
+                    placeholder="Senha" 
+                    [(ngModel)]="User.senha" 
+                    name="senha"
+                    required
+                    #fieldPassword="ngModel">
+                <app-mensagem 
+                    *ngIf="fieldPassword.invalid && fieldPassword.touched"
+                    mensage="Senha obrigatória."></app-mensagem>
+            </div>
+            <div class="form-group mb-3">
+                <select class="form-select" [(ngModel)]="User.sexoId" name="sexoId" #fieldSexo="ngModel">
+                    <option value="null" disabled selected hidden>Sexo</option>
+                    <option value="1">Maculino</option>
+                    <option value="2">Feminino</option>
+                </select>
+                <app-mensagem 
+                    *ngIf="fieldSexo.invalid && fieldSexo.touched"
+                    mensage="Sexo obrigatório."></app-mensagem>
+            </div>
+
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary btn-block" [disabled]="signinForm.invalid" (click)="modal.close(true)">Cadastrar</button>
+                <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss(false)">Cancelar</button>
+            </div>
+
+        </div>
+    </form>
+
+</ng-template>
+
+<button class="btn btn-md btn-outline-primary" (click)="open(modalContent)">
+    <i class="fa fa-user"></i> Cadastrar Usuário</button>

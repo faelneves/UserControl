@@ -1,0 +1,34 @@
+.menu{
+    margin-bottom: 30px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: rgb(224, 235, 255);
+    .title h1{
+        font-size: 2em;
+        @media (max-width: 768px) {
+            font-size: 18px;
+            align-self: center;
+        }
+    }
+    .new-user{
+        align-self: center;
+        text-align: end;
+        button{
+            @media (max-width: 768px) {
+                font-size: 14px;
+                align-self: center;
+            }
+        }
+    }
+}
+
+.user-table {
+    //width: 30em;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.action-column{
+    display: flex;
+    justify-content: space-around;
+}
