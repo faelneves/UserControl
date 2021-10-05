@@ -1,27 +1,33 @@
-# User
+# Atividade Proposta
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.7.
+Estamos desenvolvendo um novo sistema e foi solicitado a você que fosse feito o cadastro de usuários e um relatório com alguns filtros.
+Para esse desenvolvimento deverão ser utilizadas as tecnologias Asp.Net WebApi, Angular2+ e SQL Server.
 
-## Development server
+## Guia de Instalação
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+#Passo 1
 
-## Code scaffolding
+Clone o repositório para sua maquina.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+#Passo 2
 
-## Build
+Execute o comando `npm install` para instalar as dependencias
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+#Passo 3
 
-## Running unit tests
+Certifique-se de que a API do backend está em execução. (https://github.com/faelneves/UserControl-API/)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#Passo 4
 
-## Running end-to-end tests
+Execute o comando `ng serve --o` para iniciar a aplicação.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+## Imagens Demo
+### Dashboard
+![demo1](https://i.ibb.co/NxkNY6p/dashboard.png)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Cadastro
+![demo2](https://i.ibb.co/HgTRkLH/cadastro.png)
+
+### Edição
+![demo3](https://i.ibb.co/bX0ZnGw/edicao.png)
